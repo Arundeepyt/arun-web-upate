@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arun's Website</title>
 
-    <!-- Updated Font Awesome -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* Modern animation when page loads */
+        /* Page Load Animation */
         body {
-            opacity: 0; /* Start hidden */
+            opacity: 0;
             transition: opacity 1.5s ease-in-out;
             background: linear-gradient(to right, #00e9a1, #ffa900, #ff0e69);
             color: white;
@@ -43,27 +43,26 @@
             color: #ffa900;
         }
 
-        /* Content with gap */
+        /* Content */
         .content {
-            margin-top: 100px; /* Prevents content overlap */
-            padding-bottom: 100px; /* Space above footer */
+            margin-top: 100px;
+            padding-bottom: 100px;
         }
 
-        /* Unique animation for "Welcome to Our Website!" */
+        /* Animations */
         .welcome-text {
             opacity: 0;
-            transform: scale(0.5); /* Start smaller */
+            transform: scale(0.5);
             transition: transform 1.5s ease-out, opacity 1.5s ease-out;
         }
 
-        /* Normal fade-in animation for other sections */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1.5s ease-out, transform 1.5s ease-out;
         }
 
-        /* Footer Design */
+        /* Footer */
         footer {
             position: fixed;
             bottom: 0;
@@ -74,7 +73,7 @@
             padding: 15px 0;
         }
 
-        /* Social Media Icons */
+        /* Social Icons */
         .social-icons a {
             margin: 0 10px;
             color: white;
@@ -83,18 +82,18 @@
         }
 
         .social-icons .youtube:hover {
-            color: #FF0000; /* YouTube Red */
+            color: #FF0000;
         }
 
         .social-icons .twitter:hover {
-            color: #1DA1F2; /* Twitter Blue */
+            color: #1DA1F2;
         }
 
         .social-icons .snapchat:hover {
-            color: #FFFC00; /* Snapchat Yellow */
+            color: #FFFC00;
         }
 
-        /* Image Zoom Animation */
+        /* Image Zoom */
         .image-box {
             display: inline-block;
             margin: 20px;
@@ -105,6 +104,12 @@
 
         .image-box:hover {
             transform: scale(1.1);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
     </style>
 </head>
@@ -118,36 +123,41 @@
         <a href="#contact"><i class="fa fa-money"></i> Profit</a>
     </div>
 
-    <!-- Content Section -->
+    <!-- Content -->
     <div class="content">
         <h1 class="welcome-text">Welcome to Our Website!</h1>
         <h2 class="fade-in">About Us</h2>
-        <p class="fade-in">a🚀 Creative UI/UX Designer | Web Developer | Content Strategist 🎨💻✨
+        <p class="fade-in">Hello! I'm Arun, a curious learner with a passion for design and technology. This website reflects my UI/UX journey.</p>
 
-Passionate about crafting engaging digital experiences 🌍 through intuitive design, seamless user interfaces, and visually compelling themes. 🖌️🎭 Skilled in UI/UX, web development, and content creation, with a proven ability to drive high engagement 📊📈 on digital platforms.
+        <hr>
 
-🔍 Constantly evolving to stay ahead in the ever-changing design & tech industry, blending creativity 🎨 with strategy 🧩 to deliver impactful solutions. 🚀💡 Hello! I'm Arun, a curious learner with a passion for design and technology. This website is a reflection of my journey in UI/UX design.</p>
+        <h2 class="fade-in">My Favorite Song</h2>
+        <iframe style="border-radius:12px" 
+          src="https://open.spotify.com/embed/track/75saTKONGJgXlZSItREc60?utm_source=generator" 
+          width="100%" height="152" frameborder="0" allowfullscreen="" 
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+        </iframe>
 
         <hr>
 
         <h2 class="fade-in">Our Services</h2>
         <div class="container">
             <div class="image-box fade-in">
-                <img src="445.gif" width="100%" alt="Service 1">
+                <img src="https://yourwebsite.com/images/445.gif" alt="Service 1">
                 <p>“Even if I knew that tomorrow the world would go to pieces, I would still plant my apple tree.”</p>
             </div>
             <div class="image-box fade-in">
-                <img src="166.gif" width="100%" alt="Service 2">
+                <img src="https://yourwebsite.com/images/166.gif" alt="Service 2">
                 <p>“There is nothing impossible to him who will try.”</p>
             </div>
             <div class="image-box fade-in">
-                <img src="188.gif" width="100%" alt="Service 3">
+                <img src="https://yourwebsite.com/images/188.gif" alt="Service 3">
                 <p>“Perfection is not attainable, but if we chase perfection, we can catch excellence.”</p>
             </div>
         </div>
     </div>
 
-    <!-- Footer with Social Media Links -->
+    <!-- Footer -->
     <footer>
         <p>© 2025 Arun. All Rights Reserved.</p>
         <div class="social-icons">
@@ -168,18 +178,23 @@ Passionate about crafting engaging digital experiences 🌍 through intuitive de
         window.onload = function() {
             document.body.style.opacity = "1";
 
-            // Special animation for Welcome text
             let welcomeText = document.querySelector('.welcome-text');
             welcomeText.style.opacity = "1";
-            welcomeText.style.transform = "scale(1)"; // Expands smoothly
+            welcomeText.style.transform = "scale(1)";
 
-            // Normal fade-in animation for other sections
             let fadeElements = document.querySelectorAll('.fade-in');
             fadeElements.forEach((el, index) => {
                 setTimeout(() => {
                     el.style.opacity = "1";
                     el.style.transform = "translateY(0)";
                 }, index * 300);
+            });
+
+            // Check if images load properly
+            document.querySelectorAll(".image-box img").forEach(img => {
+                img.onerror = function() {
+                    this.src = "https://via.placeholder.com/600x400?text=Image+Not+Found";
+                };
             });
         };
     </script>
