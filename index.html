@@ -29,6 +29,9 @@
             top: 0;
             left: 0;
             z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .navbar a {
@@ -41,6 +44,19 @@
 
         .navbar a:hover {
             color: #ffa900;
+        }
+
+        /* Spotify Widget */
+        .spotify-widget {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 20px; /* Adjust spacing */
+        }
+
+        .spotify-widget iframe {
+            border-radius: 8px;
+            width: 150px;
+            height: 60px;
         }
 
         /* Content with gap */
@@ -111,11 +127,22 @@
 
 <body>
 
-    <!-- Navbar -->
+    <!-- Navbar with Spotify -->
     <div class="navbar">
-        <a href="#home"><i class="fa fa-globe"></i> Web Updates</a>
-        <a href="#services"><i class="fa fa-comments"></i> Feedback</a>
-        <a href="#contact"><i class="fa fa-money"></i> Profit</a>
+        <div>
+            <a href="#home"><i class="fa fa-globe"></i> Web Updates</a>
+            <a href="#services"><i class="fa fa-comments"></i> Feedback</a>
+            <a href="#contact"><i class="fa fa-money"></i> Profit</a>
+        </div>
+
+        <!-- Spotify Embed -->
+        <div class="spotify-widget">
+            <iframe src="https://open.spotify.com/embed/track/75saTKONGJgXlZSItREc60?utm_source=generator" 
+                frameborder="0" allowfullscreen 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy">
+            </iframe>
+        </div>
     </div>
 
     <!-- Content Section -->
