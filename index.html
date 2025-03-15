@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arun's Website</title>
 
-    <!-- Font Awesome -->
+    <!-- Updated Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* Page Load Animation */
+        /* Modern animation when page loads */
         body {
-            opacity: 0;
+            opacity: 0; /* Start hidden */
             transition: opacity 1.5s ease-in-out;
             background: linear-gradient(to right, #00e9a1, #ffa900, #ff0e69);
             color: white;
@@ -43,26 +43,27 @@
             color: #ffa900;
         }
 
-        /* Content */
+        /* Content with gap */
         .content {
-            margin-top: 100px;
-            padding-bottom: 100px;
+            margin-top: 100px; /* Prevents content overlap */
+            padding-bottom: 100px; /* Space above footer */
         }
 
-        /* Animations */
+        /* Unique animation for "Welcome to Our Website!" */
         .welcome-text {
             opacity: 0;
-            transform: scale(0.5);
+            transform: scale(0.5); /* Start smaller */
             transition: transform 1.5s ease-out, opacity 1.5s ease-out;
         }
 
+        /* Normal fade-in animation for other sections */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1.5s ease-out, transform 1.5s ease-out;
         }
 
-        /* Footer */
+        /* Footer Design */
         footer {
             position: fixed;
             bottom: 0;
@@ -73,7 +74,7 @@
             padding: 15px 0;
         }
 
-        /* Social Icons */
+        /* Social Media Icons */
         .social-icons a {
             margin: 0 10px;
             color: white;
@@ -82,18 +83,18 @@
         }
 
         .social-icons .youtube:hover {
-            color: #FF0000;
+            color: #FF0000; /* YouTube Red */
         }
 
         .social-icons .twitter:hover {
-            color: #1DA1F2;
+            color: #1DA1F2; /* Twitter Blue */
         }
 
         .social-icons .snapchat:hover {
-            color: #FFFC00;
+            color: #FFFC00; /* Snapchat Yellow */
         }
 
-        /* Image Zoom */
+        /* Image Zoom Animation */
         .image-box {
             display: inline-block;
             margin: 20px;
@@ -104,12 +105,6 @@
 
         .image-box:hover {
             transform: scale(1.1);
-        }
-
-        .image-box img {
-            width: 100%;
-            height: auto;
-            display: block;
         }
     </style>
 </head>
@@ -123,41 +118,32 @@
         <a href="#contact"><i class="fa fa-money"></i> Profit</a>
     </div>
 
-    <!-- Content -->
+    <!-- Content Section -->
     <div class="content">
         <h1 class="welcome-text">Welcome to Our Website!</h1>
         <h2 class="fade-in">About Us</h2>
-        <p class="fade-in">Hello! I'm Arun, a curious learner with a passion for design and technology. This website reflects my UI/UX journey.</p>
-
-        <hr>
-
-        <h2 class="fade-in">My Favorite Song</h2>
-        <iframe style="border-radius:12px" 
-          src="https://open.spotify.com/embed/track/75saTKONGJgXlZSItREc60?utm_source=generator" 
-          width="100%" height="152" frameborder="0" allowfullscreen="" 
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-        </iframe>
+        <p class="fade-in">Hello! I'm Arun, a curious learner with a passion for design and technology. This website is a reflection of my journey in UI/UX design.</p>
 
         <hr>
 
         <h2 class="fade-in">Our Services</h2>
         <div class="container">
             <div class="image-box fade-in">
-                <img src="https://yourwebsite.com/images/445.gif" alt="Service 1">
+                <img src="445.gif" width="100%" alt="Service 1">
                 <p>“Even if I knew that tomorrow the world would go to pieces, I would still plant my apple tree.”</p>
             </div>
             <div class="image-box fade-in">
-                <img src="https://yourwebsite.com/images/166.gif" alt="Service 2">
+                <img src="166.gif" width="100%" alt="Service 2">
                 <p>“There is nothing impossible to him who will try.”</p>
             </div>
             <div class="image-box fade-in">
-                <img src="https://yourwebsite.com/images/188.gif" alt="Service 3">
+                <img src="188.gif" width="100%" alt="Service 3">
                 <p>“Perfection is not attainable, but if we chase perfection, we can catch excellence.”</p>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer with Social Media Links -->
     <footer>
         <p>© 2025 Arun. All Rights Reserved.</p>
         <div class="social-icons">
@@ -178,23 +164,18 @@
         window.onload = function() {
             document.body.style.opacity = "1";
 
+            // Special animation for Welcome text
             let welcomeText = document.querySelector('.welcome-text');
             welcomeText.style.opacity = "1";
-            welcomeText.style.transform = "scale(1)";
+            welcomeText.style.transform = "scale(1)"; // Expands smoothly
 
+            // Normal fade-in animation for other sections
             let fadeElements = document.querySelectorAll('.fade-in');
             fadeElements.forEach((el, index) => {
                 setTimeout(() => {
                     el.style.opacity = "1";
                     el.style.transform = "translateY(0)";
                 }, index * 300);
-            });
-
-            // Check if images load properly
-            document.querySelectorAll(".image-box img").forEach(img => {
-                img.onerror = function() {
-                    this.src = "https://via.placeholder.com/600x400?text=Image+Not+Found";
-                };
             });
         };
     </script>
