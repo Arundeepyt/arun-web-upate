@@ -1,7 +1,7 @@
 # arun-web-upate
 
 
-Copyright (c) 2025 Arun Sodhi
+Copyright (c) 2025 Arun 
 
 All Rights Reserved.
 
